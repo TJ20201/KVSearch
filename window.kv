@@ -1,0 +1,34 @@
+Screen:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout: 
+        orientation: 'vertical'
+        BoxLayout: 
+            orientation: 'horizontal'
+            MDTextField:
+                hint_text: "Search here..."
+                text_color: (1, 1, 1, 1)
+                theme_text_color: "Custom"
+                background_color: "#ffffff88"
+                mode: "fill"
+                id: 'searchfield'
+                user_font_size: '12dp'
+            MDIconButton:
+                icon: "magnify"
+                text_color: (1, 1, 1, 1)
+                theme_text_color: "Custom"
+                md_bg_color: "#ffffff88"
+                md_bg_normal: ""
+                user_font_size: '48dp'
+                size_hint: None, None
+                on_press:
+                    app.search()
+        Label:
+            text: ' '
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
